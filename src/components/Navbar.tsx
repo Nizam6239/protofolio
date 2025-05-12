@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import {Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { IoHomeSharp } from "react-icons/io5";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
@@ -24,11 +24,11 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
       <MenuItem setActive={setActive} active={active} Icon={IoHomeSharp} onClick={() => window.location.href = "/"} >
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} Icon={FaGithub} onClick={() => window.location.href = "https://www.linkedin.com/in/nizam-906242226"}>
+        <MenuItem setActive={setActive} active={active} Icon={FaGithub} onClick={() => window.location.href = "https://github.com/Nizam6239"}>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} Icon={FaLinkedin} onClick={() => window.location.href = "https://www.linkedin.com/in/nizam-906242226"}>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} Icon={IoMdMail} onClick={() => window.location.href = "https://www.linkedin.com/in/nizam-906242226"}>
+        <MenuItem setActive={setActive} active={active} Icon={IoMdMail} onClick={() => window.location.href = ""}>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} Icon={SiGeeksforgeeks} onClick={() => window.location.href = "https://www.geeksforgeeks.org/user/nizammalik6239"}>
         </MenuItem>
