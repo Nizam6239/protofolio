@@ -1,11 +1,39 @@
 "use client";
 import React, { useState } from "react";
-import {Menu, MenuItem } from "./ui/navbar-menu";
+import { Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { IoHomeSharp } from "react-icons/io5";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { SiGeeksforgeeks } from "react-icons/si";
+
+const NAV_ITEMS = [
+  {
+    icon: IoHomeSharp,
+    href: "/",
+    label: "Home"
+  },
+  {
+    icon: FaGithub,
+    href: "https://github.com/Nizam6239",
+    label: "GitHub"
+  },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/nizam-906242226",
+    label: "LinkedIn"
+  },
+  {
+    icon: IoMdMail,
+    href: "mailto:nizammalik6239@gmail.com",
+    label: "Email"
+  },
+  {
+    icon: SiGeeksforgeeks,
+    href: "https://www.geeksforgeeks.org/user/nizammalik6239",
+    label: "GeeksForGeeks"
+  }
+];
 
 export function NavbarDemo() {
   return (
@@ -15,23 +43,34 @@ export function NavbarDemo() {
   );
 }
 
-function Navbar({ className }: { className?: string }) {
+export function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+
+  const handleNavigation = (href: string) => {
+    if (href.startsWith('http') || href.startsWith('mailto')) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    } else {
+      window.location.href = href;
+    }
+  };
+
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-[300px] mx-auto z-50", className)}
+      className={cn(
+        "fixed top-10 inset-x-0 max-w-[300px] mx-auto z-50",
+        className
+      )}
     >
       <Menu setActive={setActive}>
-      <MenuItem setActive={setActive} active={active} Icon={IoHomeSharp} onClick={() => window.location.href = "/"} >
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} Icon={FaGithub} onClick={() => window.location.href = "https://github.com/Nizam6239"}>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} Icon={FaLinkedin} onClick={() => window.location.href = "https://www.linkedin.com/in/nizam-906242226"}>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} Icon={IoMdMail} onClick={() => window.location.href = ""}>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} Icon={SiGeeksforgeeks} onClick={() => window.location.href = "https://www.geeksforgeeks.org/user/nizammalik6239"}>
-        </MenuItem>
+        {NAV_ITEMS.map((item) => (
+          <MenuItem
+            key={item.label}
+            setActive={setActive}
+            active={active}
+            Icon={item.icon}
+            onClick={() => handleNavigation(item.href)}
+          />
+        ))}
       </Menu>
     </div>
   );

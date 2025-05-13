@@ -57,6 +57,7 @@ const AboutMe = () => {
   const techStackRef = useRef(null);
 
   useEffect(() => {
+    const currentRef = techStackRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -72,13 +73,13 @@ const AboutMe = () => {
       }
     );
 
-    if (techStackRef.current) {
-      observer.observe(techStackRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (techStackRef.current) {
-        observer.unobserve(techStackRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
