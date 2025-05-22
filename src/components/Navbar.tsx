@@ -57,7 +57,7 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 left-0 right-0 md:mx-auto md:max-w-full px-4  flex justify-center",
+        "fixed top-10 left-0 right-0 md:mx-auto md:max-w-full flex justify-items-start sm:justify-center md:justify-center ml-28 md:ml-0",
         className
       )}
     >

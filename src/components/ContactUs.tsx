@@ -27,7 +27,6 @@ const Contact = () => {
         <div className=" p-8 rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold mb-4 text-center">Get in Touch</h2>
           <p className="text-gray-400 mb-8 text-center">{text}</p>
-
           <form className="space-y-6">
             {/* Name Field */}
             <div>
