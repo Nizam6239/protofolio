@@ -139,24 +139,25 @@ const AboutMe = () => {
 
             <div ref={techStackRef}>
               <h2 className="text-xl font-bold mb-2 text-pink-400">Tech Stack</h2>
-              <div className="grid grid-cols-3 gap-4">
-                {isVisible &&
-                  Object.entries(techIcons).map(([tech, icon], index) => (
-                    <button
-                      key={tech}
-                      className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs md:text-base font-semibold leading-6 text-white inline-block"
-                      style={{
-                        animation: `fadeIn 0.2s ease ${index * 0.2}s forwards`,
-                        opacity: 0,
-                      }}
-                    >
-                      <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-1.5 px-3 ring-1 ring-white/10">
-                        {icon}
-                        <span>{tech}</span>
-                      </div>
-                    </button>
-                  ))}
-              </div>
+              <div className="grid grid-cols-3 gap-y-2 gap-x-0">
+  {isVisible &&
+    Object.entries(techIcons).map(([tech, icon], index) => (
+      <button
+        key={tech}
+        className=" no-underline group cursor-pointer relative  rounded-full p-[1px] text-[10px] sm:text-xs md:text-sm font-semibold leading-5 text-white w-20 md:w-24 lg:w-28 hover:bg-gradient-to-r from-pink-500 to-purple-500 hover:text-white transition-all duration-300 ease-in-out ring-1 ring-white/10"
+        style={{
+          animation: `fadeIn 0.2s ease ${index * 0.2}s forwards`,
+          opacity: 0,
+        }}
+      >
+        <div className="flex items-center justify-center space-x-1 bg-zinc-950 py-1 px-2 rounded-full ring-1 ">
+          {icon}
+          <span className="truncate">{tech}</span>
+        </div>
+      </button>
+    ))}
+</div>
+
 
               <style jsx>{`
                 @keyframes fadeIn {

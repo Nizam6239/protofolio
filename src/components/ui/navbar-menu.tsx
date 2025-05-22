@@ -77,7 +77,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)}
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-6 px-4 py-2 "
+      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex md:justify-center space-x-3 md:space-x-6 px-4 py-2 "
     >
       {children}
     </nav>
@@ -102,7 +102,7 @@ export const ProductItem = ({
         width={140}
         height={70}
         alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
+        className="flex-shrink-0 rounded-md shadow md:shadow-2xl"
       />
       <div>
         <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
