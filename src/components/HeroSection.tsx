@@ -27,7 +27,7 @@ export function HeroSection() {
         backgroundImage: `url('${HERO_CONTENT.backgroundImage}')`,
       }}
     >
-      <div className="mb-4 mt-40  md:mt-0">
+      <div className="mb-4 mt-32  md:mt-0">
         <Button
           borderRadius="1.75rem"
           className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
