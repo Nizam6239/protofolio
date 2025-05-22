@@ -37,7 +37,7 @@ export function HeroSection() {
         </Button>
       </div>
 
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center overflow-hidden">
+      <h1 className="text-2xl md:text-6xl font-bold mb-4 text-center overflow-hidden">
         <span className="block animate-revealText">
           {HERO_CONTENT.title}
         </span>
