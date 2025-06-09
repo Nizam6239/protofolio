@@ -24,50 +24,55 @@ const handleExternalLink = (url: string) => {
 export function HeroSection() {
   return (
     <div
-      className="max-h-fit min-h-screen overflow-hidden flex flex-col justify-center items-center text-white px-4 sm:px-8 pt-2 bg-cover bg-center"
+      className="w-full min-h-screen overflow-x-hidden bg-cover bg-center text-white flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 py-10"
       style={{
         backgroundImage: `url('${HERO_CONTENT.backgroundImage}')`,
       }}
     >
-      <div className="flex justify-center mb-10 mt-2 md:mt-0">
+      {/* Collaboration Button */}
+      <div className="flex justify-center mt-20 mb-8">
         <Button
           borderRadius="1.75rem"
-          className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+          className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 text-sm sm:text-base"
           onClick={() => handleExternalLink(SOCIAL_LINKS.github)}
         >
           Open for Collaborations
         </Button>
       </div>
 
-      <h1 className="text-2xl md:text-6xl font-bold mb-4 text-center">
+      {/* Heading */}
+      <h1 className="text-center font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 px-2">
         <span className="block animate-revealText">
           {HERO_CONTENT.title}
         </span>
       </h1>
 
-      <p className="text-base sm:text-lg md:text-xl mb-8 text-center max-w-xl">
+      {/* Description */}
+      <p className="text-center text-sm sm:text-base md:text-lg lg:text-xl mb-8 max-w-2xl px-2">
         {HERO_CONTENT.description}
       </p>
 
-      <div className="flex flex-wrap gap-4 justify-center">
+      {/* Buttons */}
+      <div className="flex flex-wrap gap-4 justify-center items-center">
+        {/* Connect Button */}
         <button
-          className="relative flex flex-row h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-          type="button"
+          className="relative flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
           onClick={() => handleExternalLink(SOCIAL_LINKS.linkedin)}
         >
           <span className="absolute -inset-[300%] sm:-inset-[1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-          <span className="flex flex-row h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm sm:text-base font-medium text-white backdrop-blur-3xl">
+          <span className="relative flex items-center justify-center rounded-full bg-slate-950 px-5 sm:px-6 py-1.5 text-sm sm:text-base font-medium text-white backdrop-blur-3xl">
             {HERO_CONTENT.connectText}
           </span>
         </button>
 
+        {/* Resume Button */}
         <a href="/NIZAM_Resume.pdf" download="Nizam_Resume.pdf">
           <button
-            className="relative flex flex-row h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            className="relative flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
             type="button"
           >
             <span className="absolute -inset-[300%] sm:-inset-[1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="flex flex-row h-full w-28 cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm sm:text-base font-medium text-white backdrop-blur-3xl">
+            <span className="relative flex items-center justify-center rounded-full bg-slate-950 px-5 sm:px-6 py-1.5 text-sm sm:text-base font-medium text-white backdrop-blur-3xl">
               {HERO_CONTENT.resumeText}
             </span>
           </button>
