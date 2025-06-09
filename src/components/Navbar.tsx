@@ -38,7 +38,7 @@ const NAV_ITEMS = [
 export function NavbarDemo() {
   return (
     <div className=" flex items-center ">
-      <Navbar className="top-6 flex ml-32" />
+      <Navbar className="top-6 flex ml-28" />
     </div>
   );
 }
