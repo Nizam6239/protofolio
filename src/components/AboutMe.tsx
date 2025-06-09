@@ -103,9 +103,9 @@ const AboutMe = () => {
                 width={100}
                 height={100}
                 alt="Picture of the author"
-                className="rounded-full h-60 w-60"
+                className="rounded-full h-20 w-20 sm:h-40 sm:w-40 md:h-60 md:w-60"
               />
-              <div className="text-center md:text-justify mb-4">
+              <div className="text-center text-lg md:text-justify mb-4">
                 <TextGenerateEffect words={words} />
               </div>
             </div>

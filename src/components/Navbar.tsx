@@ -37,8 +37,8 @@ const NAV_ITEMS = [
 
 export function NavbarDemo() {
   return (
-    <div className="relative flex items-center justify-center">
-      <Navbar className="top-6 flex" />
+    <div className="relative flex items-center ">
+      <Navbar className="top-16 md:top-6 flex ml-28" />
     </div>
   );
 }
