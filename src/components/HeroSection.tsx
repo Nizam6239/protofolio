@@ -24,7 +24,7 @@ const handleExternalLink = (url: string) => {
 export function HeroSection() {
   return (
     <div
-      className="w-full min-h-screen overflow-hidden flex flex-col justify-center items-center text-white px-4 sm:px-8 pt-2 bg-cover bg-center"
+      className="max-h-fit min-h-screen overflow-hidden flex flex-col justify-center items-center text-white px-4 sm:px-8 pt-2 bg-cover bg-center"
       style={{
         backgroundImage: `url('${HERO_CONTENT.backgroundImage}')`,
       }}
