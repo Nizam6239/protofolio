@@ -43,7 +43,7 @@ const GradientLine: React.FC<{
 
 const Project = () => {
   return (
-    <div className="relative flex flex-col justify-center items-center min-h-screen bg-transparent overflow-hidden mt-4 ">
+    <div className="relative flex flex-col justify-center items-center min-h-[80vh] bg-transparent overflow-hidden mt-4">
   <SparklesCore
     id="tsparticlesfullpage"
     background="transparent"

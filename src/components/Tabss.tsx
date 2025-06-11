@@ -14,7 +14,7 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    title: "Smart Home App",
+    title: "Smart_Home App",
     value: "Smart Home App",
     image: "/SmartHomeImage.png",
     link: "https://smart-home-integration-website.onrender.com"
@@ -51,7 +51,7 @@ const ProjectContent: React.FC<{ image: string }> = ({ image }) => (
     alt="Project screenshot"
     width="1000"
     height="1000"
-    className="object-cover object-left-top h-[60%] md:h-[90%] absolute -bottom-10 inset-x-0 w-[100%] rounded-xl mx-auto"
+    className="object-cover object-left-top h-[80%] md:h-[90%] absolute -bottom-10 inset-x-0 w-[100%] rounded-xl mx-auto"
   />
 );
 

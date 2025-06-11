@@ -93,8 +93,10 @@ const AboutMe = () => {
       className="flex items-center flex-col justify-center px-2 md:px-10 w-full h-full"
     >
       <div className="flex flex-col items-center mb-4 min-h-screen text-white p-8">
-        <TextHoverEffect text="GET TO KNOW ME" />
+        <div className=" hidden md:block">
+          <TextHoverEffect text="GET TO KNOW ME" />
         <TextRevealCard text="About Me" revealText="Tech Enthusiast" />
+        </div>
         <div className="flex flex-col md:flex-row gap-20 items-center">
           <div className="flex flex-col justify-center items-center md:items-start max-w-[400px]">
             <div className="flex flex-col justify-center items-center">
@@ -120,17 +122,17 @@ const AboutMe = () => {
 
           <div className="flex-1 flex flex-col gap-8">
             <div>
-              <h2 className="text-xl font-bold mb-2 text-pink-400">
+              <h2 className="text-xl font-bold mb-2 text-pink-400 ml-10 sm:ml-0">
                 Education
               </h2>
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between">
-                  <span className="font-semibold">Galgotias University</span>
-                  <span className="text-gray-400">2021 - 2025</span>
+                  <span className="font-semibold ml-10 sm:ml-0">Galgotias University</span>
+                  <span className="text-gray-400 mr-10 sm:mr-0">2021 - 2025</span>
                 </div>
                 <div className="flex justify-between">
-                  <p>Bachelor of Technology</p>
-                  <span className="text-gray-400">CGPA: 8.4</span>
+                  <p className="ml-10 sm:ml-0">Bachelor of Technology</p>
+                  <span className="text-gray-400 mr-10 sm:mr-0">CGPA: 8.4</span>
                 </div>
               </div>
             </div>
@@ -138,27 +140,25 @@ const AboutMe = () => {
             <hr className="bg-amber-50 w-[480px]" />
 
             <div ref={techStackRef}>
-              <h2 className="text-xl font-bold mb-2 text-pink-400">Tech Stack</h2>
-              <div className="grid grid-cols-3 gap-y-2 gap-x-0">
-  {isVisible &&
-    Object.entries(techIcons).map(([tech, icon], index) => (
-      <button
-        key={tech}
-        className=" no-underline group cursor-pointer relative  rounded-full p-[1px] text-[10px] sm:text-xs md:text-sm font-semibold leading-5 text-white w-20 md:w-24 lg:w-28 hover:bg-gradient-to-r from-pink-500 to-purple-500 hover:text-white transition-all duration-300 ease-in-out ring-1 ring-white/10"
-        style={{
-          animation: `fadeIn 0.2s ease ${index * 0.2}s forwards`,
-          opacity: 0,
-        }}
-      >
-        <div className="flex items-center justify-center space-x-1 bg-zinc-950 py-1 px-2 rounded-full ring-1 ">
-          {icon}
-          <span className="truncate">{tech}</span>
-        </div>
-      </button>
-    ))}
-</div>
-
-
+              <h2 className="text-xl font-bold mb-2 text-pink-400 ml-10 sm:ml-0">Tech Stack</h2>
+              <div className="grid grid-cols-3 gap-y-2 gap-x-0 ml-14 sm:ml-0">
+                  {isVisible &&
+                    Object.entries(techIcons).map(([tech, icon], index) => (
+                      <button
+                        key={tech}
+                        className=" no-underline group cursor-pointer relative  rounded-full p-[1px] text-[10px] sm:text-xs md:text-sm font-semibold leading-5 text-white w-20 md:w-24 lg:w-28 hover:bg-gradient-to-r from-pink-500 to-purple-500 hover:text-white transition-all duration-300 ease-in-out ring-1 ring-white/10"
+                        style={{
+                          animation: `fadeIn 0.2s ease ${index * 0.2}s forwards`,
+                          opacity: 0,
+                        }}
+                      >
+                        <div className="flex items-center justify-center space-x-1 bg-zinc-950 py-1 px-2 rounded-full ring-1 ">
+                          {icon}
+                          <span className="truncate">{tech}</span>
+                        </div>
+                      </button>
+                    ))}
+                </div>
               <style jsx>{`
                 @keyframes fadeIn {
                   from {
